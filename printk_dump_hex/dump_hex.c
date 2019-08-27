@@ -1,6 +1,7 @@
 #include <linux/module.h>
 
 MODULE_DESCRIPTION("Linux kernel module to demonstrate hex_dump usage!");
+MODULE_AUTHOR("jagdsh.linux@gmail.com");
 MODULE_LICENSE("GPL");
 
 static int __init  null_init(void)
