@@ -1,0 +1,40 @@
+From 4f52d185d6c14e4567c6c0d65a9882e2bf7a3128 Mon Sep 17 00:00:00 2001
+From: Jagadeesh Pagadala <jagdsh.linux@gmail.com>
+Date: Sat, 18 May 2019 10:26:11 +0530
+Subject: [PATCH 3/4] Some more changes.
+
+---
+ dmp_stk.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/dmp_stk.c b/dmp_stk.c
+index e6548c5..7cfb247 100644
+--- a/dmp_stk.c
++++ b/dmp_stk.c
+@@ -2,16 +2,21 @@
+ 
+ MODULE_DESCRIPTION("Simple module to dump the stack");
+ MODULE_LICENSE("GPL");
+-/* init modules*/
++/* init module*/
+ static int __init  dmp_stk_init(void)
+ {
+-	printk("Entering....");
++	printk("Entering....into\n");
+ 	dump_stack();
++
+ 	return 0;
+ }
+ 
++/* exit moodule*/
+ static void __exit dmp_stk_exit(void)
+ {
++	printk("Exiting from\n");
++	dump_stack();
++
+ 	return;
+ }
+ module_init(dmp_stk_init);
+-- 
+1.8.3.1
+

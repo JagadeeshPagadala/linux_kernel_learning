@@ -1,0 +1,40 @@
+From f3416c012faff7c937d9341f1981d7f27a789917 Mon Sep 17 00:00:00 2001
+From: Jagadeesh Pagadala <jagdsh.linux@gmail.com>
+Date: Sat, 18 May 2019 11:03:06 +0530
+Subject: [PATCH 4/4] Added MODULE_AUTHOR
+
+---
+ Makefile  | 4 ++--
+ dmp_stk.c | 1 +
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index a27083b..5ab88b4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,8 +1,8 @@
+ obj-m += dmp_stk.o
+-
++#compile step
+ all:
+ 	$(MAKE) -C /lib/modules/`uname -r`/build/ M=$(PWD) modules
+ 
++#clean step
+ clean:
+ 	$(MAKE) -C /lib/modules/`uname -r`/build/ M=$(PWD) modules clean
+-	
+diff --git a/dmp_stk.c b/dmp_stk.c
+index 7cfb247..e4a05ed 100644
+--- a/dmp_stk.c
++++ b/dmp_stk.c
+@@ -1,6 +1,7 @@
+ #include <linux/module.h>
+ 
+ MODULE_DESCRIPTION("Simple module to dump the stack");
++MODULE_AUTHOR("Jagadeesh Pagadala");
+ MODULE_LICENSE("GPL");
+ /* init module*/
+ static int __init  dmp_stk_init(void)
+-- 
+1.8.3.1
+
